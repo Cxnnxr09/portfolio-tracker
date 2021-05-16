@@ -1,7 +1,8 @@
 """From app imports the flask application object and the flask
 render_template functionality."""
 from app import app
-from flask import render_template, url_for
+from flask import render_template, url_for, flash, redirect
+from app.forms import LoginForm
 
 
 @app.route('/')
@@ -13,3 +14,13 @@ Return html or template and displays under the route.
     :return: template 'home.html'
     """
     return render_template('home.html', title="Home")
+
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    form = LoginForm()
+    if form.validate_on_submit():
+        flash('Login requested for user {}, remember_me={}'.format(
+            form.username.data, form.remember_me.data))
+        return redirect(url_for('home'))
+    return render_template('login.html', title='Sign In', form=form)
