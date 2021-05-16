@@ -1,7 +1,7 @@
 """From app imports the flask application object and the flask
 render_template functionality."""
 from app import app
-from flask import render_template
+from flask import render_template, url_for
 
 
 @app.route('/')

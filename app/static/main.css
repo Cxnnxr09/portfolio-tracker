@@ -1,0 +1,33 @@
+body {
+  background: #fafafa;
+  color: #333333;
+  margin-top: 5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #000000;
+}
+
+.bg-steel {
+  background-color: #000000;
+}
+
+.site-header .navbar-nav .nav-link {
+  color: #FFFFFF;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+  color: #00FF00;
+}
+
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 500;
+}
+
+.content-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #000000;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
