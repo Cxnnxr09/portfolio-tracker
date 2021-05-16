@@ -12,4 +12,4 @@ Return html or template and displays under the route.
 
     :return: template 'home.html'
     """
-    return render_template('home.html')
+    return render_template('home.html', title="Home")
