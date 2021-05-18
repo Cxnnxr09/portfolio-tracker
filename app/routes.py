@@ -13,7 +13,7 @@ def home():
 
     :return: template 'home.html'
     """
-    return render_template('home.html', title="Home")
+    return render_template('home.html', title='Home')
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -30,3 +30,13 @@ def login():
             form.username.data, form.remember_me.data))
         return redirect(url_for('home'))
     return render_template('login.html', title='Sign In', form=form)
+
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    pass
+
+
+@app.route('/dashboard', methods=['GET', 'POST'])
+def dshaboard():
+    return render_template('dashboard.html', title='Dashboard')

@@ -7,7 +7,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 
 class Config(object):
-    """Contains application configure information such as security key."""
+    """Contains flask application configure settings."""
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'sec-key'
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
                               'sqlite:///' + os.path.join(basedir, 'app.db')
