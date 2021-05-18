@@ -3,10 +3,15 @@ flask application"""
 from flask import Flask
 import os
 
+basedir = os.path.abspath(os.path.dirname(__file__))
+
 
 class Config(object):
     """Contains application configure information such as security key."""
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'sec-key'
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
+                              'sqlite:///' + os.path.join(basedir, 'app.db')
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
 app = Flask(__name__)

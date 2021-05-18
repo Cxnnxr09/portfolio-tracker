@@ -9,7 +9,7 @@ from app.forms import LoginForm
 @app.route('/home')
 def home():
     """
-Return html or template and displays under the route.
+    Return html or template and displays under the route.
 
     :return: template 'home.html'
     """
@@ -18,6 +18,12 @@ Return html or template and displays under the route.
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    """
+    Return html or template for page and form. If Form is completed returns
+    redirect to home page.
+
+    :return: template 'login.html'
+    """
     form = LoginForm()
     if form.validate_on_submit():
         flash('Login requested for user {}, remember_me={}'.format(
