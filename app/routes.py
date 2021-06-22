@@ -32,5 +32,5 @@ def register():
 
 
 @app.route('/dashboard', methods=['GET', 'POST'])
-def dshaboard():
+def dashboard():
     return render_template('dashboard.html', title='Dashboard')
